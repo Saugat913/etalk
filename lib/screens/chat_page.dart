@@ -1,3 +1,4 @@
+import 'package:etalk/widget/buttom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -35,29 +36,6 @@ class ChatPage extends StatelessWidget {
                 ))
           ],
         ),
-       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat_bubble_rounded,),
-            label: 'Chat',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.call_outlined),
-            label: 'Call',
-          ),
-           BottomNavigationBarItem(
-            icon: Icon(Icons.video_call_outlined),
-            label: 'Video',
-          ),
-           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_outlined),
-            label: 'Profile',
-          ),
-        ],
-        currentIndex: 0,
-        selectedItemColor:Colors.blue[300],
-        //onTap: _onItemTapped,
-      ),
         body: Container(
           padding: EdgeInsets.all(12),
           child: Column(children: [
@@ -78,7 +56,8 @@ class ChatPage extends StatelessWidget {
                 return ListTile(
                     leading: CircleAvatar(), title: Text(user_list[index]),subtitle: Text(user_list_subtitle[index]),);
               },
-            ))
+            )),
+            CustomButtomNavigationBar()
           ]),
         ));
   }
