@@ -26,14 +26,15 @@ class ChatPage extends StatelessWidget {
             "Chats",
             style: TextStyle(color: Colors.black, fontSize: 24),
           ),
-          actions: [
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.more_horiz,
-                  color: Colors.black45,
-                ))
-          ],
+        ),
+        floatingActionButton: FloatingActionButton.extended(
+          label: Text("Message"),
+          onPressed: () {},
+          icon: Icon(Icons.add_comment_outlined),
+          // mini: true,
+          // shape: RoundedRectangleBorder(
+
+          //     borderRadius: BorderRadius.all(Radius.circular(12))),
         ),
         body: Container(
           padding: const EdgeInsets.all(12),
@@ -64,7 +65,7 @@ class ChatPage extends StatelessWidget {
                 );
               },
             )),
-            CustomButtomNavigationBar()
+            //CustomButtomNavigationBar()
           ]),
         ));
   }

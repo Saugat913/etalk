@@ -47,7 +47,8 @@ class InboxPage extends StatelessWidget {
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.call)),
           IconButton(onPressed: () {}, icon: const Icon(Icons.video_call)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert_outlined)),
+          IconButton(
+              onPressed: () {}, icon: const Icon(Icons.more_vert_outlined)),
         ],
         leading: IconButton(
           onPressed: () {
@@ -56,6 +57,7 @@ class InboxPage extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_sharp),
         ),
         title: ListTile(
+          contentPadding:EdgeInsets.symmetric(horizontal: 7) ,
           title: Text(
             friendName,
             overflow: TextOverflow.ellipsis,
@@ -76,7 +78,11 @@ class InboxPage extends StatelessWidget {
                         message: dummyMessage.elementAt(index),
                       );
                     })),
-            const MessageWriter()
+            Padding(
+              padding: const EdgeInsets.only(left: 8, right: 8, bottom: 6),
+              child: const MessageWriter(),
+            ),
+            //SizedBox(height: 2,)
           ],
         ),
       ),

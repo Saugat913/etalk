@@ -1,4 +1,4 @@
-import 'package:etalk/screens/chat_page.dart';
+import 'package:etalk/screens/index_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,10 +7,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: ChatPage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: IndexPage());
   }
 }

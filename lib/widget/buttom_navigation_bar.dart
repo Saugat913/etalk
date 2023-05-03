@@ -1,25 +1,34 @@
 import 'package:flutter/material.dart';
 
 class CustomButtomNavigationBar extends StatelessWidget {
-  CustomButtomNavigationBar({super.key});
-
-  final List<Icon> iconsLists = [
-    const Icon(
-      Icons.chat_bubble_rounded,
-    ),
-    const Icon(Icons.call_outlined),
-    const Icon(Icons.video_call_outlined),
-    const Icon(Icons.account_circle_outlined),
-  ];
+  CustomButtomNavigationBar(
+      {super.key,
+      required this.iconsDataLists,
+      required this.currentIndexPage,
+      required this.pages,
+      this.onSelectColor,required this.onPressed});
+  final int currentIndexPage;
+  final List<IconData> iconsDataLists;
+  final List<Widget> pages;
+  void Function(int index) onPressed;
+  Color? onSelectColor;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         ...List.generate(
-            iconsLists.length,
+            iconsDataLists.length,
             (index) => IconButton(
-                onPressed: () {}, icon: iconsLists.elementAt(index)))
+                onPressed: () {
+                     onPressed(index);
+                },
+                icon: Icon(
+                  iconsDataLists.elementAt(index),
+                  color: currentIndexPage == index
+                      ? onSelectColor ?? Colors.blueAccent
+                      :null,
+                )))
       ],
     );
   }

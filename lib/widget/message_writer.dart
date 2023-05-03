@@ -14,7 +14,7 @@ class _MessageWriterState extends State<MessageWriter> {
     var screenWidth = MediaQuery.of(context).size.width;
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(9),
+        borderRadius: BorderRadius.circular(12),
         color: Colors.white,
       ),
       width: screenWidth,
