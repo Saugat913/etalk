@@ -2,6 +2,7 @@ import 'package:etalk/models/message_model.dart';
 import 'package:etalk/widget/message_card.dart';
 import 'package:etalk/widget/message_writer.dart';
 import 'package:flutter/material.dart';
+import 'package:etalk/screens/call_page.dart';
 
 // lets assume currently loggined user id 12
 class InboxPage extends StatelessWidget {
@@ -45,8 +46,13 @@ class InboxPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.call)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.video_call)),
+          IconButton(onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder:(context){return CallPage();}));
+          }, icon: const Icon(Icons.call)),
+          IconButton(onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder:(context){return CallPage();}));
+
+          }, icon: const Icon(Icons.video_call)),
           IconButton(
               onPressed: () {}, icon: const Icon(Icons.more_vert_outlined)),
         ],
@@ -57,7 +63,7 @@ class InboxPage extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_sharp),
         ),
         title: ListTile(
-          contentPadding:EdgeInsets.symmetric(horizontal: 7) ,
+          contentPadding:const EdgeInsets.symmetric(horizontal: 7) ,
           title: Text(
             friendName,
             overflow: TextOverflow.ellipsis,
@@ -78,9 +84,9 @@ class InboxPage extends StatelessWidget {
                         message: dummyMessage.elementAt(index),
                       );
                     })),
-            Padding(
-              padding: const EdgeInsets.only(left: 8, right: 8, bottom: 6),
-              child: const MessageWriter(),
+            const Padding(
+              padding: EdgeInsets.only(left: 8, right: 8, bottom: 6),
+              child: MessageWriter(),
             ),
             //SizedBox(height: 2,)
           ],

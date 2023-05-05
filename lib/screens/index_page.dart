@@ -4,8 +4,6 @@ import 'package:etalk/screens/profile_page.dart';
 import 'package:etalk/screens/video_call_log_page.dart';
 import 'package:etalk/widget/buttom_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class IndexPage extends StatefulWidget {
   const IndexPage({super.key});
@@ -17,8 +15,8 @@ class IndexPage extends StatefulWidget {
 class _IndexPageState extends State<IndexPage> {
   final List<Widget> pages = [
     ChatPage(),
-    CallLogPage(),
-    VideoCallLogPage(),
+    const CallLogPage(),
+    const VideoCallLogPage(),
     ProfilePage()
   ];
 

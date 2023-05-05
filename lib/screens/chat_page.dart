@@ -1,5 +1,4 @@
 import 'package:etalk/screens/inbox_page.dart';
-import 'package:etalk/widget/buttom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatelessWidget {
@@ -28,9 +27,9 @@ class ChatPage extends StatelessWidget {
           ),
         ),
         floatingActionButton: FloatingActionButton.extended(
-          label: Text("Message"),
+          label: const Text("Message"),
           onPressed: () {},
-          icon: Icon(Icons.add_comment_outlined),
+          icon: const Icon(Icons.add_comment_outlined),
           // mini: true,
           // shape: RoundedRectangleBorder(
 

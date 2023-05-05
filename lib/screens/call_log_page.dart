@@ -6,7 +6,6 @@ class CallLogPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
-    var screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -22,22 +21,22 @@ class CallLogPage extends StatelessWidget {
               left: screenWidth * 0.02, right: screenWidth * 0.02, top: 17),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text("Recents"),
-            SizedBox(
+            const Text("Recents"),
+            const SizedBox(
               height: 9,
             ),
             ...List.generate(
                 12,
                 (index) => ListTile(
-                      leading: CircleAvatar(),
+                      leading: const CircleAvatar(),
                       title: Text("User $index"),
                       subtitle: Row(
-                        children: [
+                        children: const [
                           Icon(Icons.call_missed_outgoing),
                           Text("Outgoing")
                         ],
                       ),
-                      trailing: Icon(Icons.call_outlined),
+                      trailing: const Icon(Icons.call_outlined),
                     ))
           ]),
         ),
